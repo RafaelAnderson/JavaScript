@@ -1,4 +1,4 @@
-import invoiceByClientName, { invoices } from "./data/invoices";
+import { invoices } from "./data/invoices";
 
 const invoicesName = invoices.map(i => {
     return i.name;
@@ -22,5 +22,8 @@ console.log(invoiceFilter);
 const invoiceDeleted = invoices.filter(i => i.id != 2); // != por valor, !== por tipo y valor
 console.log(invoiceDeleted);
 
-console.log("Buscar por nombre de cliente");
-console.log(invoiceByClientName("Maria"));
+const result = invoices.some(i => i.client.name === 'Pepe');
+console.log(result);
+
+const invoiceByClientName = invoices.some(i => i.client.name === 'Pepe');
+console.log(invoiceByClientName);
